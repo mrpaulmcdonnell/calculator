@@ -1,14 +1,19 @@
 describe("My Converter", function() {
-    it("should convert fahrenheit to celsius", function () {
-        expect(Converter.convertFromFahrToCels(-40)).toBe(-40);
+    it("should convert first number and second number", function () {
+        expect(Converter.AddTwoNumbers( 4, 6).toBe(10);
     })
-    it("fahrenheit to celsius should be able to deal with strings", function () {
-        expect(function () { Converter.convertFromFahrToCels("hello") }).toThrow(new Error("Not a number"));
+     it("7 + string should be an error", function() {
+
+        expect (function() {Converter.AddTwoNumbers(7,"xyz")}).toThrow(new Error("Not a number"));
     })
-    it("should convert celsius to fahrenheit", function () {
-        expect(Converter.convertFromCelsToFahr(100)).toBe(212);
+    
+     it("string + 5 should be an error", function() {
+
+        expect (function() {Converter.AddTwoNumbers("xyz", 5)}).toThrow(new Error("Not a number"));
     })
-    it("celsius to fahrenheit should be able to deal with strings", function () {
-        expect(function () { Converter.convertFromCelsToFahr("hello") }).toThrow(new Error("Not a number"));
+    
+     it("string + string should be an error", function() {
+
+        expect (function() {Converter.AddTwoNumbers("xyz", "abc")}).toThrow(new Error("Not a number"));
     })
 })
