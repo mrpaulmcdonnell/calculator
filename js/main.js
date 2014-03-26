@@ -12,27 +12,19 @@ window._skel_config = {
 };
 
 $(document).ready(function() {
+    var num1 = $("#num1input")
+    var num2 = $("#num2input")
+    var res  = $('#result')
+
     $("#convertbutton").click(function() {
-        var num1Value = $("#num1input").val();
-        var num2Value = $("#num2input").val();
-		var num3Value = $("#result").val();
-
-
-        if (((num1Value.length !=0) && (num2Value.length !=0))
-            || ((num1Value.length == 0) && (num2Value.length == 0)) {
-            alert("Please set one field, and only one field")
-        }
-        if (num1Value.length != 0)  && (num2Value.length !=0){
-            $("#result").val(Converter.AddTwoNumbers(num1Value,num2Value ));
-        }
-        /*else if (fValue.length != 0) {
-            $("#cinput").val(Converter.convertFromFahrToCels(fValue)); */
-        }
+      (num1.val() && num2.val())
+        ? res.val(Converter.AddTwoNumbers(num1.val(),num2.val()))
+        : alert('You need 2 values');
     });
+
     $("#clearbutton").click(function() {
-        $("#num1input").val('');
-        $("#num2input").val('');
-		$("#result").val('');
+      num1.val('');
+      num2.val('');
+      res.val('');
     });
-        
 });

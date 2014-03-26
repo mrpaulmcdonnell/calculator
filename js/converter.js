@@ -1,7 +1,7 @@
 var Converter = (function () {
     // private stuff goes here
 
-    //var converterValue = 2.2
+    
 
     return {
 
